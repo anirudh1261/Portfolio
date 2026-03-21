@@ -1,0 +1,392 @@
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  X,
+  Terminal as TerminalIcon,
+  Maximize2,
+  Minimize2,
+} from 'lucide-react';
+import {
+  playTerminalOpen,
+  playTerminalClose,
+  playKeyTick,
+  playSuccess,
+  playError,
+  playClick,
+} from '@/hooks/useSoundEffects';
+
+interface CommandOutput {
+  id: number;
+  type: 'command' | 'response' | 'error';
+  content: React.ReactNode;
+}
+
+const Terminal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMaximized, setIsMaximized] = useState(false);
+  const [input, setInput] = useState('');
+  const [history, setHistory] = useState<CommandOutput[]>([
+    {
+      id: 0,
+      type: 'response',
+      content: (
+        <div className="mb-2">
+          <p>Welcome to Anirudh's Portfolio Terminal v1.0.0</p>
+          <p>
+            I am a conversational AI. Type{' '}
+            <span className="text-green-400">help</span> for commands, or just
+            chat with me!
+          </p>
+        </div>
+      ),
+    },
+  ]);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Focus input when clicking anywhere in the terminal
+  const handleTerminalClick = () => {
+    inputRef.current?.focus();
+  };
+
+  // Scroll to bottom on new history
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [history, isOpen]);
+
+  // Global keyboard shortcut
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsOpen((prev) => {
+          const next = !prev;
+          if (next) playTerminalOpen();
+          else playTerminalClose();
+          return next;
+        });
+      }
+      if (e.key === 'Escape' && isOpen) {
+        playTerminalClose();
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  const getCommandResponse = (cmd: string): React.ReactNode | null => {
+    switch (cmd) {
+      case 'help':
+        return (
+          <div className="grid grid-cols-[100px_1fr] gap-2">
+            <span className="text-green-400">about</span>{' '}
+            <span>Learn about me</span>
+            <span className="text-green-400">skills</span>{' '}
+            <span>View technical skills</span>
+            <span className="text-green-400">projects</span>{' '}
+            <span>List recent projects</span>
+            <span className="text-green-400">contact</span>{' '}
+            <span>How to reach me</span>
+            <span className="text-green-400">clear</span>{' '}
+            <span>Clear the terminal</span>
+            <span className="text-green-400">exit</span>{' '}
+            <span>Close terminal</span>
+          </div>
+        );
+      case 'about':
+        return "I'm Ganji Anirudh, a passionate 2nd-year B.Tech CSE student at SR University, Warangal. I specialize in full-stack web development and AI/ML, building modern, high-performance applications.";
+      case 'skills':
+        return (
+          <div>
+            <p className="mb-1">CORE STACK:</p>
+            <p>• Python / JavaScript / C</p>
+            <p>• React / Vue.js / Tailwind CSS</p>
+            <p>• Node.js / Express.js / FastAPI</p>
+            <p>• TensorFlow / scikit-learn / Pandas</p>
+          </div>
+        );
+      case 'projects':
+        return (
+          <div className="flex flex-col gap-1">
+            <a href="#projects" className="text-blue-400 hover:underline">
+              1. Digit Recognition with Drawing UI
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              2. Handwritten Digit Classification
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              3. Mini Music Player
+            </a>
+          </div>
+        );
+      case 'contact':
+        return (
+          <div>
+            <p>
+              Email:{' '}
+              <a
+                href="mailto:anirudh.ganji15@gmail.com"
+                className="text-blue-400 hover:underline"
+              >
+                anirudh.ganji15@gmail.com
+              </a>
+            </p>
+            <p>
+              LinkedIn:{' '}
+              <a
+                href="https://www.linkedin.com/in/ganji-anirudh-8897133b0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                linkedin.com/in/ganji-anirudh-8897133b0
+              </a>
+            </p>
+            <p>
+              GitHub:{' '}
+              <a
+                href="https://github.com/anirudh1261"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                github.com/anirudh1261
+              </a>
+            </p>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const processQuery = (input: string): React.ReactNode | null => {
+    const lower = input.toLowerCase();
+
+    // Greeting
+    if (lower.match(/^(hi|hello|hey|greetings)/)) {
+      return "Hello! I'm Anirudh's virtual assistant. How can I help you today?";
+    }
+
+    // About
+    if (lower.match(/(who|about|author|creator|developer)/)) {
+      return getCommandResponse('about');
+    }
+
+    // Skills
+    if (lower.match(/(skill|stack|tech|language|framework)/)) {
+      return getCommandResponse('skills');
+    }
+
+    // Projects
+    if (lower.match(/(project|work|app|site|portfolio)/)) {
+      return getCommandResponse('projects');
+    }
+
+    // Contact
+    if (lower.match(/(contact|email|reach|hire|github|linkedin)/)) {
+      return getCommandResponse('contact');
+    }
+
+    return null;
+  };
+
+  const handleCommand = (cmd: string) => {
+    const trimmedCmd = cmd.trim();
+    if (!trimmedCmd) return;
+
+    const newHistory: CommandOutput[] = [
+      ...history,
+      {
+        id: Date.now(),
+        type: 'command',
+        content: `guest@portfolio:~$ ${cmd}`,
+      },
+    ];
+
+    // Check for clear/exit first
+    if (trimmedCmd.toLowerCase() === 'clear') {
+      playClick();
+      setHistory([]);
+      return;
+    }
+    if (trimmedCmd.toLowerCase() === 'exit') {
+      playTerminalClose();
+      setIsOpen(false);
+      return;
+    }
+
+    // Try exact command match
+    let response = getCommandResponse(trimmedCmd.toLowerCase());
+
+    // If no exact match, try natural language processing
+    if (!response) {
+      response = processQuery(trimmedCmd);
+    }
+
+    // Default fallback
+    if (!response) {
+      playError();
+      response = (
+        <span className="text-red-400">
+          Command not understood. Try asking "who are you?", "show skills", or
+          type 'help'.
+        </span>
+      );
+    } else {
+      playSuccess();
+    }
+
+    newHistory.push({
+      id: Date.now() + 1,
+      type: 'response',
+      content: response,
+    });
+
+    setHistory(newHistory);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    handleCommand(input);
+    setInput('');
+  };
+
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const currentTouch = e.targetTouches[0].clientY;
+    const diff = currentTouch - touchStart;
+
+    // Swipe down to close (threshold 100px)
+    if (diff > 100) {
+      playTerminalClose();
+      setIsOpen(false);
+      setTouchStart(null);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setTouchStart(null);
+  };
+
+  if (!isOpen) {
+    return (
+      <div className="fixed bottom-6 right-6 z-50 group">
+        <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          {window.innerWidth > 768 ? 'Ctrl + K' : 'Terminal'}
+        </div>
+        <button
+          onClick={() => {
+            playTerminalOpen();
+            setIsOpen(true);
+          }}
+          onTouchStart={playTerminalOpen}
+          className="p-3 bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all duration-300 active:scale-95"
+          aria-label="Open Terminal"
+        >
+          <TerminalIcon className="w-5 h-5" />
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-300"
+      onClick={() => setIsOpen(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div
+        className={`bg-[#0c0c0c] border border-white/20 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] w-full transition-all duration-300 flex flex-col font-mono text-sm md:text-base selection:bg-white/20 active:border-white/40 ${
+          isMaximized ? 'h-[95vh] w-[95vw]' : 'max-w-2xl h-[600px]'
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Drag indicator for mobile */}
+        <div className="md:hidden w-12 h-1.5 bg-white/20 rounded-full mx-auto mt-2" />
+
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-2 border-b border-white/10 bg-[#1a1a1a]">
+          <div className="flex items-center gap-2">
+            <div
+              className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 cursor-pointer active:scale-90 transition-transform"
+              onClick={() => {
+                playTerminalClose();
+                setIsOpen(false);
+              }}
+            />
+            <div
+              className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 cursor-pointer active:scale-90 transition-transform"
+              onClick={() => setIsMaximized(!isMaximized)}
+            />
+            <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 cursor-pointer" />
+            <span className="ml-2 text-white/60 text-xs">
+              guest@anirudh-portfolio:~
+            </span>
+          </div>
+          <div className="flex items-center gap-3 text-white/40">
+            <button
+              onClick={() => setIsMaximized(!isMaximized)}
+              className="hover:text-white"
+            >
+              {isMaximized ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+            </button>
+            <button
+              onClick={() => {
+                playTerminalClose();
+                setIsOpen(false);
+              }}
+              className="hover:text-white"
+            >
+              <X size={14} />
+            </button>
+          </div>
+        </div>
+
+        {/* content */}
+        <div
+          className="flex-1 overflow-y-auto p-4 text-white/90 selection:bg-white/20"
+          ref={scrollRef}
+          onClick={handleTerminalClick}
+        >
+          {history.map((entry) => (
+            <div key={entry.id} className="mb-2 break-words">
+              {entry.content}
+            </div>
+          ))}
+
+          <form onSubmit={handleSubmit} className="flex items-center gap-2">
+            <span className="text-green-400 shrink-0">guest@portfolio:~$</span>
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => {
+                setInput(e.target.value);
+                playKeyTick();
+              }}
+              className="flex-1 bg-transparent border-none outline-none text-white focus:ring-0 p-0"
+              autoFocus
+              spellCheck={false}
+              autoComplete="off"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Terminal;

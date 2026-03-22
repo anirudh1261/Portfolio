@@ -40,7 +40,7 @@ const LeetCodeStats = () => {
 
   // Fallback data if API fails (based on user screenshot)
   const displayData = data || {
-    totalSolved: 77,
+    totalSolved: 79,
     totalQuestions: 3374,
     easySolved: 50,
     totalEasy: 932,

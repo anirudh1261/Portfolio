@@ -10,7 +10,6 @@ interface LeetCodeData {
   totalMedium: number;
   hardSolved: number;
   totalHard: number;
-  acceptanceRate: number;
   ranking: number;
 }
 
@@ -22,10 +21,10 @@ const LeetCodeStats = () => {
     const fetchStats = async () => {
       try {
         const response = await fetch(
-          'https://leetcode-stats-api.herokuapp.com/GANJI_ANIRUDH'
+          'https://leetcode-api-faisalshohag.vercel.app/GANJI_ANIRUDH'
         );
         const result = await response.json();
-        if (result.status === 'success') {
+        if (result && result.totalSolved !== undefined) {
           setData(result);
         }
       } catch (error) {
@@ -38,18 +37,17 @@ const LeetCodeStats = () => {
     fetchStats();
   }, []);
 
-  // Fallback data if API fails (based on user screenshot)
+  // Fallback data if API fails
   const displayData = data || {
-    totalSolved: 77,
-    totalQuestions: 3374,
-    easySolved: 50,
-    totalEasy: 932,
+    totalSolved: 80,
+    totalQuestions: 3878,
+    easySolved: 53,
+    totalEasy: 933,
     mediumSolved: 21,
-    totalMedium: 2027,
+    totalMedium: 2029,
     hardSolved: 6,
-    totalHard: 915,
-    acceptanceRate: 0,
-    ranking: 1800430,
+    totalHard: 916,
+    ranking: 1768887,
   };
 
   const StatBar = ({ 

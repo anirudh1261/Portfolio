@@ -5,9 +5,18 @@ import { Award, ChevronDown, ChevronUp } from 'lucide-react';
 const certifications = [
   // Mar 2026
   {
+    title: 'Introduction to Cryptography and Network Security',
+    issuer: 'Saylor University',
+    date: 'Mar 2026',
+    credentialId: '4279424086GG',
+    skills: ['Cybersecurity'],
+  },
+  {
     title: 'Prompt Engineering for Everyone',
     issuer: 'CognitiveClass (IBM)',
     date: 'Mar 2026',
+    skills: ['Prompt Engineering'],
+    link: '/prompt engineering for everyone(IBM).pdf',
   },
   // Feb 2026
   {
@@ -193,6 +202,33 @@ const ExperienceSection = () => {
                     {cert.date}
                   </span>
                 </div>
+                {'credentialId' in cert && (
+                  <div className="mt-1 text-[10px] text-foreground/40 font-mono">
+                    ID: {cert.credentialId}
+                  </div>
+                )}
+                {'skills' in cert && cert.skills && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {cert.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-1.5 py-0.5 bg-black/5 border border-black/5 text-[9px] font-bold uppercase tracking-wider text-black/60"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {'link' in cert && cert.link && (
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold uppercase tracking-wider text-black hover:underline"
+                  >
+                    View Certificate
+                  </a>
+                )}
               </div>
             </div>
           ))}

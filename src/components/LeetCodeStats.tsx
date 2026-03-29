@@ -39,9 +39,9 @@ const LeetCodeStats = () => {
 
   // Fallback data if API fails
   const displayData = data || {
-    totalSolved: 80,
+    totalSolved: 81,
     totalQuestions: 3878,
-    easySolved: 53,
+    easySolved: 54,
     totalEasy: 933,
     mediumSolved: 21,
     totalMedium: 2029,

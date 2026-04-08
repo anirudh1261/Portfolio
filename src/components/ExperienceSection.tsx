@@ -3,14 +3,6 @@ import SectionBlock from './SectionBlock';
 import { Award, ChevronDown, ChevronUp } from 'lucide-react';
 
 const certifications = [
-  // Apr 2026
-  {
-    title: 'AyuLink – Smart Health. Zero Boundaries.',
-    issuer: 'SR University',
-    date: 'Apr 2026',
-    skills: ['TypeScript', 'C', 'IoT', 'Healthcare'],
-    link: 'https://fight-club-ht-01.vercel.app/',
-  },
   // Mar 2026
   {
     title: 'Introduction to Cryptography and Network Security',

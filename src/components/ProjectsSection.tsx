@@ -5,8 +5,16 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 
 const projects = [
   {
-    title: 'OrbitGuard',
+    title: 'AyuLink',
     isNew: true,
+    description:
+      'A unified healthcare infrastructure platform that works even without internet using mesh-based hardware devices. Enables real-time patient monitoring, connects patients, doctors, and families across rural & urban areas, and ensures 24/7 health tracking for better care.',
+    tags: ['TypeScript', 'C', 'IoT', 'Smart Health', 'Remote Monitoring', 'Mesh Networking', 'Hackathon'],
+    githubUrl: 'https://github.com/anirudh1261',
+    liveUrl: 'https://fight-club-ht-01.vercel.app/',
+  },
+  {
+    title: 'OrbitGuard',
     description:
       'A Space Situational Awareness (SSA) system that tracks real satellites in real-time. Fetches live TLE data, predicts future orbital positions using Skyfield, detects potential collisions, and visualises everything on an interactive 3D globe. Positions update every 1.5 seconds.',
     tags: [

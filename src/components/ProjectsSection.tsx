@@ -5,8 +5,16 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 
 const projects = [
   {
-    title: 'AyuLink',
+    title: 'Real-Time Traffic Intelligence & Analysis System',
     isNew: true,
+    description:
+      'This system transforms live camera feeds into actionable traffic insights using advanced AI models like YOLOv8 and OCR techniques. It helps monitor vehicle behavior, estimate speed, and detect violations in real-time — a step towards building smarter cities.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'PaddleOCR', 'NumPy', 'Flask'],
+    githubUrl: 'https://github.com/anirudh1261/Real-time-traffic-analysis',
+    liveUrl: 'https://github.com/anirudh1261/Real-time-traffic-analysis',
+  },
+  {
+    title: 'AyuLink',
     description:
       'A unified healthcare infrastructure platform that works even without internet using mesh-based hardware devices. Enables real-time patient monitoring, connects patients, doctors, and families across rural & urban areas, and ensures 24/7 health tracking for better care.',
     tags: ['TypeScript', 'C', 'IoT', 'Smart Health', 'Remote Monitoring', 'Mesh Networking', 'Hackathon'],

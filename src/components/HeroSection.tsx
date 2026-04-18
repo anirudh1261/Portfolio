@@ -218,7 +218,7 @@ const HeroSection = () => {
             },
             {
               Icon: Mail,
-              href: 'mailto:anirudh.ganji15@gmail.com',
+              href: 'https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com',
               label: 'Email',
             },
           ].map(({ Icon, href, label }, i) => (

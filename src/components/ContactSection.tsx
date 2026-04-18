@@ -23,7 +23,7 @@ const ContactSection = () => {
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
     window.open(
-      `mailto:anirudh.ganji15@gmail.com?subject=${encodedSubject}&body=${encodedBody}`,
+      `https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com&su=${encodedSubject}&body=${encodedBody}`,
       '_blank',
     );
   };

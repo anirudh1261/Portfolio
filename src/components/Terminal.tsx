@@ -128,7 +128,7 @@ const Terminal = () => {
             <p>
               Email:{' '}
               <a
-                href="mailto:anirudh.ganji15@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com"
                 className="text-blue-400 hover:underline"
               >
                 anirudh.ganji15@gmail.com

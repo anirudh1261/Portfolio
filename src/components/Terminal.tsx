@@ -112,13 +112,25 @@ const Terminal = () => {
         return (
           <div className="flex flex-col gap-1">
             <a href="#projects" className="text-blue-400 hover:underline">
-              1. Digit Recognition with Drawing UI
+              1. Real-Time Traffic Intelligence & Analysis System
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              2. Handwritten Digit Classification
+              2. AyuLink
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              3. Mini Music Player
+              3. OrbitGuard
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              4. Cyberattack Detection ML
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              5. Digit Recognition with Drawing UI
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              6. Wifi Cracker
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              7. Mini Music Player
             </a>
           </div>
         );

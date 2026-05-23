@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganji Anirudh - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header-left h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-left p {
+            font-size: 18px;
+            color: #555;
+            margin: 0;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .header-right a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .header-right div {
+            margin-bottom: 3px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .profile-summary {
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .education-title {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .education-date {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .education-school {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .skills-table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+        }
+
+        .skills-table td {
+            padding: 4px 0;
+            vertical-align: top;
+        }
+
+        .skills-category {
+            font-weight: 700;
+            width: 120px;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .project-date {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .project-tech {
+            font-style: italic;
+            font-size: 13px;
+            color: #666;
+            margin: 2px 0 5px 0;
+        }
+
+        .project-bullets {
+            margin: 5px 0 5px 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .project-bullets li {
+            margin-bottom: 3px;
+        }
+
+        .project-link {
+            font-size: 13px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .interests {
+            font-size: 14px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 20px;
+            }
+            .header-right a {
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <h1>Ganji Anirudh</h1>
+            <p>Full Stack Developer & AI/ML Enthusiast</p>
+        </div>
+        <div class="header-right">
+            <div>2403a51361@sru.edu.in</div>
+            <div><a href="https://linkedin.com/in/ganji-anirudh">linkedin.com/in/ganji-anirudh</a></div>
+            <div><a href="https://github.com/anirudh1261">github.com/anirudh1261</a></div>
+            <div>Warangal, Telangana, India</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Profile Summary</h2>
+        <div class="profile-summary">
+            Passionate 2nd-year B.Tech Computer Science student at SR University with strong foundation in full-stack web development, machine learning, and AI. Experienced in building responsive web applications using React, Node.js, and Python. Actively participates in hackathons and builds real-world projects. Open to internships, collaborations, and opportunities in the tech industry.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <div class="education-title">Bachelor of Technology (B.Tech) — Computer Science</div>
+            <div class="education-date">Aug 2024 – 2028</div>
+        </div>
+        <div class="education-school">SR University, Warangal, Telangana</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <table class="skills-table">
+            <tr>
+                <td class="skills-category">Languages</td>
+                <td>Python, JavaScript, C, HTML5, CSS3</td>
+            </tr>
+            <tr>
+                <td class="skills-category">Frontend</td>
+                <td>React.js, Vue.js, Tailwind CSS, HTML5, CSS3, Responsive Design</td>
+            </tr>
+            <tr>
+                <td class="skills-category">Backend</td>
+                <td>Node.js, Express.js, FastAPI, REST APIs</td>
+            </tr>
+            <tr>
+                <td class="skills-category">Databases</td>
+                <td>MongoDB, SQL</td>
+            </tr>
+            <tr>
+                <td class="skills-category">AI / ML</td>
+                <td>TensorFlow, Keras, scikit-learn, Pandas, NumPy, Matplotlib, SciPy, Plotly, YOLOv8, OpenCV</td>
+            </tr>
+            <tr>
+                <td class="skills-category">Tools</td>
+                <td>Git, GitHub, Figma, Postman, Power BI, Jupyter Notebook, Linux</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">AyuLink – Smart Health. Zero Boundaries.</div>
+                <div class="project-date">Apr 2026</div>
+            </div>
+            <div class="project-tech">TypeScript, C, IoT</div>
+            <ul class="project-bullets">
+                <li>Built a unified healthcare infrastructure platform enabling real-time patient monitoring without internet using mesh-based hardware devices.</li>
+                <li>Seamlessly connects patients, doctors, and families across rural and urban areas for faster emergency response and 24/7 health tracking.</li>
+            </ul>
+            <a href="https://fight-club-ht-01.vercel.app/" class="project-link">fight-club-ht-01.vercel.app/</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Real-Time Traffic Intelligence & Analysis System</div>
+                <div class="project-date">Apr 2026</div>
+            </div>
+            <div class="project-tech">Python, YOLOv8, OpenCV, PaddleOCR, NumPy, Flask</div>
+            <ul class="project-bullets">
+                <li>Developed a system that transforms live camera feeds into actionable traffic insights using advanced AI models and Computer Vision techniques.</li>
+                <li>Implemented real-time vehicle detection, accurate speed estimation via homography, and License Plate Recognition.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/Real-time-traffic-analysis" class="project-link">github.com/anirudh1261/Real-time-traffic-analysis</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">OrbitGuard</div>
+                <div class="project-date">Mar 2026</div>
+            </div>
+            <div class="project-tech">Python, Flask, JavaScript, Globe.gl, Skyfield, REST APIs</div>
+            <ul class="project-bullets">
+                <li>Built a Space Situational Awareness system that fetches real satellite data to predict and visualize future satellite positions on an interactive 3D globe.</li>
+                <li>Engineered real-time simulation with updates every 1.5 seconds and collision detection capabilities.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/OrbitGuard" class="project-link">github.com/anirudh1261/OrbitGuard</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Digit Recognition with Drawing UI</div>
+                <div class="project-date">Mar 2026</div>
+            </div>
+            <div class="project-tech">Python, TensorFlow, Keras, CNN, Tkinter, NumPy, Matplotlib</div>
+            <ul class="project-bullets">
+                <li>Built an interactive AI application with a real-time drawing canvas connected to a trained CNN model.</li>
+                <li>Users draw digits on the canvas and the model instantly predicts the number using the MNIST dataset.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/digit-recognition-with-drawing-ui" class="project-link">github.com/anirudh1261/digit-recognition-with-drawing-ui</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Handwritten Digit Classification</div>
+                <div class="project-date">Feb – Mar 2026</div>
+            </div>
+            <div class="project-tech">Python, TensorFlow, NumPy, Matplotlib, Scikit-Learn, Jupyter Notebook</div>
+            <ul class="project-bullets">
+                <li>Built a machine learning model to classify handwritten digits (0–9) using the MNIST dataset (70,000 images).</li>
+                <li>Achieved ~99% prediction accuracy with comprehensive model evaluation.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/HandWrittenDigits_Classification-main" class="project-link">github.com/anirudh1261/HandWrittenDigits_Classification-main</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Cyberattack Detection using Machine Learning</div>
+                <div class="project-date">Feb – Mar 2026</div>
+            </div>
+            <div class="project-tech">Python, Machine Learning, Pandas, Scikit-learn, Tkinter</div>
+            <ul class="project-bullets">
+                <li>Analyzed cybersecurity data and trained a machine learning model to predict potential cyberattacks.</li>
+                <li>Developed a Python-based UI application to interact with the trained model for real-time predictions.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/cyberattack-detection-ml" class="project-link">github.com/anirudh1261/cyberattack-detection-ml</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">WiFi Cracker</div>
+                <div class="project-date">Feb 2026</div>
+            </div>
+            <div class="project-tech">Python, Linux, Network Security</div>
+            <ul class="project-bullets">
+                <li>Developed a command-line based tool to demonstrate wireless network security and analyze vulnerabilities in WiFi protocols.</li>
+                <li>Implemented features like scanning networks, capturing handshakes, and performing security testing on WPA/WPS networks.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/WiFi-Cracker" class="project-link">github.com/anirudh1261/WiFi-Cracker</a>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Mini Music Player</div>
+                <div class="project-date">Jan – Feb 2026</div>
+            </div>
+            <div class="project-tech">HTML, CSS, JavaScript</div>
+            <ul class="project-bullets">
+                <li>Developed a lightweight, responsive media player with play/pause/seek controls and dynamic media loading.</li>
+                <li>Clean, cross-browser compatible UI with smooth interaction and DOM manipulation.</li>
+            </ul>
+            <a href="https://github.com/anirudh1261/mini-player-master" class="project-link">github.com/anirudh1261/mini-player-master</a>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Interests</h2>
+        <div class="interests">
+            Full-Stack Development • Machine Learning & AI • Hackathons • Open Source Contributions • Cloud Computing
+        </div>
+    </div>
+
+</body>
+</html>

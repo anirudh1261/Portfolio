@@ -97,7 +97,7 @@ const Terminal = () => {
           </div>
         );
       case 'about':
-        return "I'm Ganji Anirudh, a passionate 2nd-year B.Tech CSE student at SR University, Warangal. I specialize in full-stack web development and AI/ML, building modern, high-performance applications.";
+        return "I'm Ganji Anirudh, a passionate 3rd-year B.Tech CSE student at SR University, Warangal. I specialize in full-stack web development and AI/ML, building modern, high-performance applications.";
       case 'skills':
         return (
           <div>

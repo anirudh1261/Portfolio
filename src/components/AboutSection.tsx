@@ -7,7 +7,7 @@ const AboutSection = () => (
       <AnimatedAvatar />
       <div className="flex-1">
         <p className="body-text max-w-2xl">
-          I'm a passionate 2nd-year Computer Science student at SR University,
+          I'm a passionate 3rd-year Computer Science student at SR University,
           focused on becoming a proficient full-stack developer. I believe in the
           power of clean code and well-designed interfaces to communicate ideas
           effectively.

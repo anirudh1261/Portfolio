@@ -203,7 +203,7 @@ const HeroSection = () => {
       {/* Bottom-right stats */}
       <div className="absolute bottom-10 right-6 md:right-10 z-10 hidden md:block">
         <div className="font-mono text-xs text-foreground/80 text-right leading-relaxed font-medium">
-          <p>const year = "2nd Year B.Tech";</p>
+          <p>const year = "3rd Year B.Tech";</p>
           <p>const projects = 5;</p>
           <p>const passion = Infinity;</p>
         </div>

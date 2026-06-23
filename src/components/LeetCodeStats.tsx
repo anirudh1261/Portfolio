@@ -80,10 +80,13 @@ const LeetCodeStats = () => {
   );
 
   return (
-    <div className="border-4 border-black p-5 bg-white text-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col h-full">
-      <div className="flex justify-between items-start mb-6 border-b-2 border-black pb-3">
+    <div className="border-4 border-black p-5 bg-white text-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col h-full relative overflow-hidden">
+      {/* LeetCode orange accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FFA116] via-[#f89f1b] to-[#FF6B35]" />
+      <div className="flex justify-between items-start mb-6 border-b-2 border-black pb-3 mt-1">
         <div>
           <h3 className="font-mono text-xl font-black uppercase tracking-tighter flex items-center gap-2">
+            <span className="inline-block w-3 h-3 rounded-full bg-[#FFA116] shadow-[0_0_8px_#FFA116]"></span>
             LeetCode Stats_
           </h3>
           <p className="text-[10px] font-mono opacity-50 uppercase tracking-widest mt-1">
@@ -102,16 +105,16 @@ const LeetCodeStats = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
         {/* Left Side: Summary */}
-        <div className="flex flex-col justify-center items-center p-4 bg-black/5 border-2 border-black border-dashed relative overflow-hidden group">
-          <Trophy className="w-12 h-12 mb-2 opacity-10 absolute -top-2 -right-2 rotate-12 group-hover:scale-110 transition-transform" />
-          <span className="text-4xl font-black font-mono leading-none">
+        <div className="flex flex-col justify-center items-center p-4 bg-gradient-to-br from-[#FFA116]/10 to-[#FF6B35]/5 border-2 border-[#FFA116]/40 relative overflow-hidden group">
+          <Trophy className="w-12 h-12 mb-2 text-[#FFA116]/20 absolute -top-2 -right-2 rotate-12 group-hover:scale-110 transition-transform" />
+          <span className="text-4xl font-black font-mono leading-none text-[#FFA116] drop-shadow-[0_0_8px_rgba(255,161,22,0.4)]">
             {displayData.totalSolved}
           </span>
           <span className="text-[10px] font-black uppercase tracking-[0.2em] mt-2 opacity-60">
             Solved
           </span>
-          <div className="mt-4 flex items-center gap-2 px-3 py-1 bg-white border border-black text-[10px] font-mono">
-            <Activity className="w-3 h-3 text-green-600" />
+          <div className="mt-4 flex items-center gap-2 px-3 py-1 bg-white border border-[#FFA116]/50 text-[10px] font-mono">
+            <Activity className="w-3 h-3 text-[#FFA116]" />
             Rank: #{displayData.ranking.toLocaleString()}
           </div>
         </div>
@@ -122,19 +125,19 @@ const LeetCodeStats = () => {
             label="Easy" 
             solved={displayData.easySolved} 
             total={displayData.totalEasy} 
-            color="bg-green-400" 
+            color="bg-emerald-400" 
           />
           <StatBar 
             label="Med." 
             solved={displayData.mediumSolved} 
             total={displayData.totalMedium} 
-            color="bg-yellow-400" 
+            color="bg-[#FFA116]" 
           />
           <StatBar 
             label="Hard" 
             solved={displayData.hardSolved} 
             total={displayData.totalHard} 
-            color="bg-red-400" 
+            color="bg-rose-500" 
           />
         </div>
       </div>

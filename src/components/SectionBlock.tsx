@@ -28,7 +28,7 @@ const SectionBlock = ({ id, title, children }: SectionBlockProps) => {
     <section
       id={id}
       ref={ref}
-      className={`max-w-4xl mx-auto px-6 py-16 md:py-32 transition-all duration-700 ${
+      className={`relative z-10 max-w-4xl mx-auto px-6 py-16 md:py-32 transition-all duration-700 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >

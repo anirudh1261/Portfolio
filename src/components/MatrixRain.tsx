@@ -1,0 +1,81 @@
+import { useEffect, useRef } from 'react';
+
+const MatrixRain = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Size the canvas to the full scrollable document
+    const resize = () => {
+      canvas.width = document.documentElement.scrollWidth;
+      canvas.height = document.documentElement.scrollHeight;
+    };
+    resize();
+
+    // Re-size when content changes (lazy sections mounting)
+    const ro = new ResizeObserver(resize);
+    ro.observe(document.documentElement);
+
+    const chars = '01{}<>/*#=+-;:.abcdefghijklmnopqrstuvwxyz';
+    const fontSize = 14;
+
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops: number[] = Array(columns).fill(1).map(() => Math.random() * -50);
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const char = chars[Math.floor(Math.random() * chars.length)];
+
+        // Lead character
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+        // Trail character
+        if (drops[i] > 1) {
+          const trailChar = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
+          ctx.fillText(trailChar, i * fontSize, (drops[i] - 1) * fontSize);
+        }
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.97) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    };
+
+    const handleResize = () => {
+      resize();
+      columns = Math.floor(canvas.width / fontSize);
+      drops = Array(columns).fill(1).map(() => Math.random() * -50);
+    };
+
+    window.addEventListener('resize', handleResize);
+    const interval = setInterval(draw, 60);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+      ro.disconnect();
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute top-0 left-0 w-full pointer-events-none"
+      style={{ zIndex: 0 }}
+    />
+  );
+};
+
+export default MatrixRain;

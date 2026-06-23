@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { playClick, playHover } from '@/hooks/useSoundEffects';
 import {
   Github,
@@ -20,7 +20,6 @@ const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Blinking cursor
   useEffect(() => {
@@ -53,66 +52,9 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
 
-  // Matrix-style rain effect
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const chars = '01{}<>/*#=+-;:.abcdefghijklmnopqrstuvwxyz';
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = Array(columns).fill(1);
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = `${fontSize}px monospace`;
-
-      for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-
-        // Lead character — brighter
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-
-        // Trail character — slightly dimmer
-        if (drops[i] > 1) {
-          const trailChar = chars[Math.floor(Math.random() * chars.length)];
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
-          ctx.fillText(trailChar, i * fontSize, (drops[i] - 1) * fontSize);
-        }
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.97) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    };
-
-    const interval = setInterval(draw, 60);
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('resize', resize);
-    };
-  }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative px-6 overflow-hidden">
-      {/* Matrix rain canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0 pointer-events-none"
-      />
+    <section className="min-h-screen flex flex-col justify-center items-center relative z-10 px-6 overflow-hidden">
 
       {/* Top-left code comment */}
       <div className="absolute top-28 left-6 md:left-10 z-10 hidden md:block">

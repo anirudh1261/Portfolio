@@ -10,10 +10,13 @@ import ContactSection from '@/components/ContactSection';
 import ScrollToTop from '@/components/ScrollToTop';
 import Terminal from '@/components/Terminal';
 import Finale from '@/components/Finale';
+import MatrixRain from '@/components/MatrixRain';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Global matrix rain — sits behind every section */}
+      <MatrixRain />
       <Navbar />
       <ScrollToTop />
       <Terminal />

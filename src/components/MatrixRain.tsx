@@ -10,16 +10,13 @@ const MatrixRain = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Size the canvas to the full scrollable document
+    // Always match the visible viewport
     const resize = () => {
-      canvas.width = document.documentElement.scrollWidth;
-      canvas.height = document.documentElement.scrollHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
     resize();
-
-    // Re-size when content changes (lazy sections mounting)
-    const ro = new ResizeObserver(resize);
-    ro.observe(document.documentElement);
+    window.addEventListener('resize', resize);
 
     const chars = '01{}<>/*#=+-;:.abcdefghijklmnopqrstuvwxyz';
     const fontSize = 14;
@@ -35,11 +32,11 @@ const MatrixRain = () => {
       for (let i = 0; i < drops.length; i++) {
         const char = chars[Math.floor(Math.random() * chars.length)];
 
-        // Lead character
+        // Lead character — brighter
         ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
 
-        // Trail character
+        // Trail character — slightly dimmer
         if (drops[i] > 1) {
           const trailChar = chars[Math.floor(Math.random() * chars.length)];
           ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
@@ -65,15 +62,21 @@ const MatrixRain = () => {
     return () => {
       clearInterval(interval);
       window.removeEventListener('resize', handleResize);
-      ro.disconnect();
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute top-0 left-0 w-full pointer-events-none"
-      style={{ zIndex: 0 }}
+      className="pointer-events-none"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 0,
+      }}
     />
   );
 };

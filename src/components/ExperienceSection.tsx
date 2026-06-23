@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import SectionBlock from './SectionBlock';
-import { Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { Award, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 
 const certifications = [
+  // Jun 2026
+  {
+    title: 'Introduction to Cybersecurity (I2CS) – Updated',
+    issuer: 'Cisco Networking Academy',
+    date: 'Jun 2026',
+    skills: ['Cybersecurity', 'Networking'],
+    link: '/certificates/I2CSUpdate20260608-31-3jbybc-1.png',
+  },
   // Mar 2026
   {
     title: 'Introduction to Cryptography and Network Security',
@@ -31,7 +39,7 @@ const certifications = [
     title: 'Level up Cybersecurity with Generative AI',
     issuer: 'IBM SkillsBuild',
     date: 'Feb 2026',
-    link: '/certificates/IBM (cyber security with generative AI).pdf',
+    link: '/certificates/Level Up Cybersecurity with Generative AI.jpg',
   },
   {
     title: 'An Introduction to Web Applications Architecture',
@@ -69,6 +77,13 @@ const certifications = [
     issuer: 'Cisco Networking Academy',
     date: 'Nov 2025',
     link: '/certificates/CC certificate.pdf',
+  },
+  {
+    title: 'CCNA: Introduction to Networks (Part 2)',
+    issuer: 'Cisco Networking Academy',
+    date: 'Nov 2025',
+    skills: ['Networking', 'CCNA'],
+    link: '/certificates/CC certificate 2.pdf',
   },
   // Oct 2025
   {
@@ -210,6 +225,42 @@ const certifications = [
     date: 'Mar 2025',
     link: '/certificates/carrers in cybersecurity for engineering .pdf',
   },
+  // Cisco / Online Courses
+  {
+    title: 'Data Analytics Essentials',
+    issuer: 'Cisco Networking Academy',
+    date: '2025',
+    skills: ['Data Analytics'],
+    link: '/certificates/Data_Analytics_Essentials_certificate_2403a51361-sru-edu-in_67b00f71-a66a-41ce-98f8-33162efe2260.pdf',
+  },
+  {
+    title: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    date: '2025',
+    skills: ['Cybersecurity'],
+    link: '/certificates/Introduction_to_Cybersecurity_certificate_2403a51361-sru-edu-in_bd41697b-9369-4717-bfb6-01a7ea6b4327-1.png',
+  },
+  {
+    title: 'Data Structures',
+    issuer: 'Online Course',
+    date: '2025',
+    skills: ['DSA', 'Programming'],
+    link: '/certificates/data structures.pdf',
+  },
+  {
+    title: 'Python Programming',
+    issuer: 'HackerRank',
+    date: '2025',
+    skills: ['Python'],
+    link: '/certificates/hackerrank(python).png',
+  },
+  {
+    title: 'AI Skills Fest 2026',
+    issuer: 'Microsoft',
+    date: '2026',
+    skills: ['AI', 'Microsoft'],
+    link: '/certificates/ai-skills-fest-2026.png',
+  },
   // 2025 - Hackathons & Events
   {
     title: 'AzureDevCon 2025 Participation',
@@ -222,6 +273,24 @@ const certifications = [
     issuer: 'VNR VJIET',
     date: '2025',
     link: '/certificates/inno-va-thon 2.0.pdf',
+  },
+  {
+    title: 'EFOS Hackathon Participation',
+    issuer: 'EFOS',
+    date: '2025',
+    link: '/certificates/EFOS hackthon.jpeg',
+  },
+  {
+    title: 'HackOS Hackathon',
+    issuer: 'HackOS',
+    date: '2025',
+    link: '/certificates/hackOS.png',
+  },
+  {
+    title: 'UDBHAVA X Event Participation',
+    issuer: 'UDBHAVA',
+    date: '2025',
+    link: '/certificates/UDBHAVA X(1)-pages.pdf',
   },
   {
     title: 'VIVITSU \'26 Hackathon Achievement',
@@ -260,7 +329,7 @@ const ExperienceSection = () => {
       <div className="space-y-6">
         <p className="body-text mb-4">
           I have earned <strong>{certifications.length} certifications</strong>{' '}
-          from industry leaders like AWS, Google, IBM, Cisco, Coursera, and more.
+          from industry leaders like AWS, Google, IBM, Cisco, Microsoft, HackerRank, Coursera, and more.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -309,9 +378,10 @@ const ExperienceSection = () => {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold uppercase tracking-wider text-black hover:underline"
+                    className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold uppercase tracking-wider text-black hover:underline hover:gap-2 transition-all duration-200"
                   >
                     View Certificate
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>

@@ -5,6 +5,7 @@ const links = [
   { label: 'About', href: '#about' },
   { label: 'Education', href: '#education' },
   { label: 'Certifications', href: '#experience' },
+  { label: 'Internship', href: '#internship' },
   { label: 'Work', href: '#projects' },
   { label: 'Technical Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },

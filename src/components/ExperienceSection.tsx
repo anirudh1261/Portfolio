@@ -11,6 +11,13 @@ const certifications = [
     skills: ['Cybersecurity', 'Networking'],
     link: '/certificates/I2CSUpdate20260608-31-3jbybc-1.png',
   },
+  {
+    title: 'Cyber Security with Generative AI',
+    issuer: 'IBM SkillsBuild',
+    date: 'Jun 2026',
+    skills: ['Cybersecurity', 'Generative AI'],
+    link: '/certificates/IBM (cyber security with generative AI).pdf',
+  },
   // Mar 2026
   {
     title: 'Introduction to Cryptography and Network Security',
@@ -66,6 +73,20 @@ const certifications = [
     link: '/certificates/Introduction to mechanics.pdf',
   },
   // Nov 2025
+  {
+    title: 'Data Analyst Virtual Experience',
+    issuer: 'Deloitte (Forage)',
+    date: 'Nov 2025',
+    skills: ['Data Analytics', 'Business Intelligence'],
+    link: '/certificates/Delloite(Data analyst)_page-0001.jpg',
+  },
+  {
+    title: 'JP Morgan Software Engineering Virtual Experience',
+    issuer: 'JP Morgan Chase (Forage)',
+    date: 'Nov 2025',
+    skills: ['Software Engineering', 'Finance'],
+    link: '/certificates/JP_Morgan_page-0001.jpg',
+  },
   {
     title: 'Python for Data Science',
     issuer: 'Saylor Academy',
@@ -248,11 +269,24 @@ const certifications = [
     link: '/certificates/data structures.pdf',
   },
   {
+    title: 'SQL (Advanced)',
+    issuer: 'HackerRank',
+    date: '2025',
+    skills: ['SQL', 'Database'],
+    link: '/certificates/sql_advanced certificate.pdf',
+  },
+  {
     title: 'Python Programming',
     issuer: 'HackerRank',
     date: '2025',
     skills: ['Python'],
     link: '/certificates/hackerrank(python).png',
+  },
+  {
+    title: 'Achievement Certificate',
+    issuer: 'Online Platform',
+    date: '2025',
+    link: '/certificates/certificate-5yrzkkw7kadb-1777304884_page-0001.jpg',
   },
   {
     title: 'AI Skills Fest 2026',

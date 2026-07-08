@@ -5,8 +5,16 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 
 const projects = [
   {
-    title: 'Real-Time Traffic Intelligence & Analysis System',
+    title: 'RAG Projects Master',
     isNew: true,
+    description:
+      'A comprehensive collection of Retrieval-Augmented Generation (RAG) applications and tutorials built with LangChain. Showcases various advanced RAG techniques, conversational AI agents, intelligent search, and document question-answering systems.',
+    tags: ['Python', 'LangChain', 'RAG', 'LLMs', 'Vector Databases', 'AI Agents'],
+    githubUrl: 'https://github.com/anirudh1261/RAG_projects_master',
+    liveUrl: 'https://github.com/anirudh1261/RAG_projects_master',
+  },
+  {
+    title: 'Real-Time Traffic Intelligence & Analysis System',
     description:
       'This system transforms live camera feeds into actionable traffic insights using advanced AI models like YOLOv8 and OCR techniques. It helps monitor vehicle behavior, estimate speed, and detect violations in real-time — a step towards building smarter cities.',
     tags: ['Python', 'YOLOv8', 'OpenCV', 'PaddleOCR', 'NumPy', 'Flask'],

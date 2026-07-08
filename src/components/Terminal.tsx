@@ -112,25 +112,28 @@ const Terminal = () => {
         return (
           <div className="flex flex-col gap-1">
             <a href="#projects" className="text-blue-400 hover:underline">
-              1. Real-Time Traffic Intelligence & Analysis System
+              1. RAG Projects Master
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              2. AyuLink
+              2. Real-Time Traffic Intelligence & Analysis System
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              3. OrbitGuard
+              3. AyuLink
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              4. Cyberattack Detection ML
+              4. OrbitGuard
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              5. Digit Recognition with Drawing UI
+              5. Cyberattack Detection ML
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              6. Wifi Cracker
+              6. Digit Recognition with Drawing UI
             </a>
             <a href="#projects" className="text-blue-400 hover:underline">
-              7. Mini Music Player
+              7. Wifi Cracker
+            </a>
+            <a href="#projects" className="text-blue-400 hover:underline">
+              8. Mini Music Player
             </a>
           </div>
         );

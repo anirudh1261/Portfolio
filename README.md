@@ -10,7 +10,7 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![ShadcnUI](https://img.shields.io/badge/Shadcn_UI-000000?style=for-the-badge&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
 
-[**Live Demo**](https://vara-s-portfolio.vercel.app/) • [**Report Bug**](https://github.com/VARA4u-tech/Vara-s--Portfolio/issues) • [**Request Feature**](https://github.com/VARA4u-tech/Vara-s--Portfolio/issues)
+[**Live Demo**](https://vara-s-portfolio.vercel.app/) • [**Report Bug**](https://github.com/anirudh1261/Portfolio/issues) • [**Request Feature**](https://github.com/anirudh1261/Portfolio/issues)
 
 </div>
 
@@ -20,7 +20,7 @@
 
 Welcome to my portfolio! This project is more than just a resume; it's a showcase of my technical journey, featuring a **Neo-Brutalist design** aesthetic merged with high-tech interactive elements like a **Matrix-style rain effect** and a **functional Terminal shell**.
 
-> "Building the future of the web, one pixel at a time." — **Vara**
+> "Building the future of the web, one pixel at a time." — **Anirudh**
 
 ---
 
@@ -78,10 +78,10 @@ Follow these steps to set up the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/VARA4u-tech/Vara-s--Portfolio.git
+git clone https://github.com/anirudh1261/Portfolio.git
 
 # Navigate to the project directory
-cd Vara-s--Portfolio
+cd Portfolio
 
 # Install dependencies
 npm install
@@ -122,9 +122,8 @@ src/
 
 If you have any questions or want to collaborate, feel free to reach out!
 
-- **LinkedIn**: [@vara4u](https://www.linkedin.com/in/durga-vara-prasad-pappuri-1797701b6/)
-- **Instagram**: [@d_v_p6](https://www.instagram.com/d_v_p6/)
-- **Blog**: [Hashnode](https://durgavaraprasad.hashnode.dev/)
+- **LinkedIn**: [@ganji-anirudh](https://www.linkedin.com/in/ganji-anirudh-8897133b0/)
+- **Instagram**: [@anddyyyy_08](https://www.instagram.com/anddyyyy_08/)
 - **Email**: [anirudh.ganji15@gmail.com](mailto:anirudh.ganji15@gmail.com)
 - **WhatsApp**: [+91 9550533315](https://wa.me/919550533315)
 

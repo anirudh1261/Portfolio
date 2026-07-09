@@ -65,7 +65,7 @@ const certifications = [
     issuer: 'Amazon Web Services (AWS)',
     date: 'Jun 2026',
     skills: ['AI Security', 'Cloud Security', 'AWS'],
-    link: '/certificates/AWS Course/AWS_Security, Compliance, and Governence for AI Solutions.jpg',
+    link: '/certificates/AWS Course/AWS_Security, Compliance, and Governance for AI Solutions.jpg',
   },
   {
     title: 'Introduction to Cybersecurity (I2CS) – Updated',

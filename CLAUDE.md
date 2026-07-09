@@ -1,12 +1,12 @@
-# CLAUDE.md — AnisPort Portfolio
+# CLAUDE.md — Anirudh's Portfolio
 
-This file provides context and conventions for AI assistants working on the AnisPort codebase.
+This file provides context and conventions for AI assistants working on the Portfolio codebase.
 
 ---
 
 ## Project Overview
 
-**AnisPort** is a personal portfolio website built as a single-page application (SPA). It features a neo-brutalist aesthetic with advanced interactive elements: a matrix rain hero animation, an interactive terminal interface, GitHub contribution graph, and WhatsApp-integrated contact form.
+**Portfolio** is a personal portfolio website built as a single-page application (SPA). It features a neo-brutalist aesthetic with advanced interactive elements: a matrix rain hero animation, an interactive terminal interface, GitHub contribution graph, and WhatsApp-integrated contact form.
 
 The project has **no backend** — it is a purely static, client-side React application suitable for hosting on Vercel, Netlify, or any static host.
 
@@ -32,7 +32,7 @@ The project has **no backend** — it is a purely static, client-side React appl
 ## Directory Structure
 
 ```
-AnisPort/
+Portfolio/
 ├── public/               # Static assets served as-is
 │   ├── favicon.png
 │   ├── resume.pdf        # Downloadable resume

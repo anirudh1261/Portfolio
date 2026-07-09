@@ -141,7 +141,7 @@ const certifications = [
     issuer: 'Deloitte (Forage)',
     date: 'Nov 2025',
     skills: ['Data Analytics', 'Business Intelligence'],
-    link: '/certificates/Delloite(Data analyst)_page-0001.jpg',
+    link: '/certificates/Deloitte(Data analyst)_page-0001.jpg',
   },
   {
     title: 'JP Morgan Software Engineering Virtual Experience',
@@ -277,7 +277,7 @@ const certifications = [
     title: 'Elastic Collision in Particle Physics',
     issuer: 'MindLuster',
     date: 'Mar 2025',
-    link: '/certificates/Elastic collosions in particle physics.pdf',
+    link: '/certificates/Elastic collisions in particle physics.pdf',
   },
   {
     title: 'Certified Ethical Hacker Practice',
@@ -295,7 +295,7 @@ const certifications = [
     title: 'Network Types for Beginners',
     issuer: 'MindLuster',
     date: 'Mar 2025',
-    link: '/certificates/Network types for begineers.pdf',
+    link: '/certificates/Network types for beginners.pdf',
   },
   {
     title: 'Unity 3D Game Physics',
@@ -307,7 +307,7 @@ const certifications = [
     title: 'Careers in Cybersecurity for Engineering',
     issuer: 'MindLuster',
     date: 'Mar 2025',
-    link: '/certificates/carrers in cybersecurity for engineering .pdf',
+    link: '/certificates/careers in cybersecurity for engineering .pdf',
   },
   // Cisco / Online Courses
   {
@@ -411,7 +411,7 @@ const certifications = [
     title: 'Data Navigator Badge',
     issuer: 'LeetCode',
     date: '2025',
-    link: '/certificates/Data bagde.png',
+    link: '/certificates/Data badge.png',
   },
 ];
 

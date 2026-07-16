@@ -138,7 +138,7 @@ const ProjectsSection = () => (
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-black/10">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-black/10 justify-center">
             <a
               href={project.githubUrl}
               target="_blank"

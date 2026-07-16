@@ -138,13 +138,13 @@ const ProjectsSection = () => (
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-black/10 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-black/10">
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={playClick}
-              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
             >
               <Github className="w-3.5 h-3.5" />
               Source
@@ -155,7 +155,7 @@ const ProjectsSection = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={playClick}
-                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Live Demo

@@ -3,7 +3,16 @@ import SectionBlock from './SectionBlock';
 import { Badge } from './ui/badge';
 import { playHover, playClick } from '@/hooks/useSoundEffects';
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  isNew?: boolean;
+  liveUrl?: string;
+}
+
+const projects: Project[] = [
   {
     title: 'RAG Projects Master',
     description:
@@ -104,7 +113,7 @@ const ProjectsSection = () => (
           onMouseEnter={playHover}
           className="group relative border-2 border-black p-6 flex flex-col justify-between hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 bg-white min-w-[290px] w-[85vw] md:w-auto md:min-w-0 snap-start"
         >
-          {'isNew' in project && project.isNew && (
+          {project.isNew && (
             <div className="absolute -top-3 -right-3 bg-black text-white px-3 py-1 text-[10px] font-black uppercase tracking-tighter border-2 border-black z-10 rotate-12 group-hover:rotate-6 transition-transform">
               LATEST WORK
             </div>
@@ -140,9 +149,9 @@ const ProjectsSection = () => (
               <Github className="w-3.5 h-3.5" />
               Source
             </a>
-            {'liveUrl' in project && (
+            {project.liveUrl && (
               <a
-                href={project.liveUrl as string}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={playClick}

@@ -6,12 +6,20 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 const projects = [
   {
     title: 'RAG Projects Master',
-    isNew: true,
     description:
       'A comprehensive collection of Retrieval-Augmented Generation (RAG) applications and tutorials built with LangChain. Showcases various advanced RAG techniques, conversational AI agents, intelligent search, and document question-answering systems.',
     tags: ['Python', 'LangChain', 'RAG', 'LLMs', 'Vector Databases', 'AI Agents'],
     githubUrl: 'https://github.com/anirudh1261/RAG_projects_master',
     liveUrl: 'https://github.com/anirudh1261/RAG_projects_master',
+  },
+  {
+    title: 'Live Location Tracker',
+    isNew: true,
+    description:
+      'A real-time location sharing application that lets users broadcast and view live GPS positions on an interactive map. Built with WebSockets for instant bidirectional communication, it supports multiple concurrent users, smooth marker animations, and a clean map-based UI.',
+    tags: ['Python', 'WebSockets', 'JavaScript', 'Leaflet.js', 'Flask', 'Real-Time', 'GPS'],
+    githubUrl: 'https://github.com/anirudh1261/Live_Location_Tracker',
+    liveUrl: 'https://github.com/anirudh1261/Live_Location_Tracker',
   },
   {
     title: 'Real-Time Traffic Intelligence & Analysis System',

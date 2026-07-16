@@ -10,7 +10,6 @@ const projects = [
       'A comprehensive collection of Retrieval-Augmented Generation (RAG) applications and tutorials built with LangChain. Showcases various advanced RAG techniques, conversational AI agents, intelligent search, and document question-answering systems.',
     tags: ['Python', 'LangChain', 'RAG', 'LLMs', 'Vector Databases', 'AI Agents'],
     githubUrl: 'https://github.com/anirudh1261/RAG_projects_master',
-    liveUrl: 'https://github.com/anirudh1261/RAG_projects_master',
   },
   {
     title: 'Live Location Tracker',
@@ -19,7 +18,6 @@ const projects = [
       'A real-time location sharing application that lets users broadcast and view live GPS positions on an interactive map. Built with WebSockets for instant bidirectional communication, it supports multiple concurrent users, smooth marker animations, and a clean map-based UI.',
     tags: ['Python', 'WebSockets', 'JavaScript', 'Leaflet.js', 'Flask', 'Real-Time', 'GPS'],
     githubUrl: 'https://github.com/anirudh1261/Live_Location_Tracker',
-    liveUrl: 'https://github.com/anirudh1261/Live_Location_Tracker',
   },
   {
     title: 'Real-Time Traffic Intelligence & Analysis System',
@@ -27,7 +25,6 @@ const projects = [
       'This system transforms live camera feeds into actionable traffic insights using advanced AI models like YOLOv8 and OCR techniques. It helps monitor vehicle behavior, estimate speed, and detect violations in real-time — a step towards building smarter cities.',
     tags: ['Python', 'YOLOv8', 'OpenCV', 'PaddleOCR', 'NumPy', 'Flask'],
     githubUrl: 'https://github.com/anirudh1261/Real-time-traffic-analysis',
-    liveUrl: 'https://github.com/anirudh1261/Real-time-traffic-analysis',
   },
   {
     title: 'AyuLink',
@@ -65,7 +62,6 @@ const projects = [
       'Jupyter Notebook',
     ],
     githubUrl: 'https://github.com/anirudh1261/cyberattack-detection-ml',
-    liveUrl: 'https://github.com/anirudh1261/cyberattack-detection-ml',
   },
   {
     title: 'Digit Recognition with Drawing UI',
@@ -81,7 +77,6 @@ const projects = [
       'Matplotlib',
     ],
     githubUrl: 'https://github.com/anirudh1261/digit-recognition-with-drawing-ui',
-    liveUrl: 'https://github.com/anirudh1261/digit-recognition-with-drawing-ui',
   },
   {
     title: 'Wifi Cracker',
@@ -89,7 +84,6 @@ const projects = [
       'A command-line based cybersecurity tool for wireless network security analysis and vulnerability testing. Features network scanning, handshake capture, wordlist integration, and security audits for WPA/WPS protocols.',
     tags: ['Python', 'Linux', 'Network Security', 'Ethical Hacking', 'WiFi Security'],
     githubUrl: 'https://github.com/anirudh1261/Wifi-Cracker',
-    liveUrl: 'https://github.com/anirudh1261/Wifi-Cracker',
   },
   {
     title: 'Mini Music Player',
@@ -146,16 +140,18 @@ const ProjectsSection = () => (
               <Github className="w-3.5 h-3.5" />
               Source
             </a>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={playClick}
-              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              Live Demo
-            </a>
+            {'liveUrl' in project && (
+              <a
+                href={project.liveUrl as string}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Live Demo
+              </a>
+            )}
           </div>
         </div>
       ))}

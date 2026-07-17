@@ -355,6 +355,7 @@ const Terminal = () => {
             <button
               onClick={() => setIsMaximized(!isMaximized)}
               className="hover:text-white"
+              aria-label={isMaximized ? "Minimize terminal" : "Maximize terminal"}
             >
               {isMaximized ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
             </button>
@@ -364,6 +365,7 @@ const Terminal = () => {
                 setIsOpen(false);
               }}
               className="hover:text-white"
+              aria-label="Close terminal"
             >
               <X size={14} />
             </button>
@@ -396,6 +398,7 @@ const Terminal = () => {
               autoFocus
               spellCheck={false}
               autoComplete="off"
+              aria-label="Terminal command input"
             />
           </form>
         </div>

@@ -98,6 +98,7 @@ const LeetCodeStats = () => {
           target="_blank" 
           rel="noopener noreferrer"
           className="p-2 border-2 border-black hover:bg-black hover:text-white transition-colors"
+          aria-label="View LeetCode Profile"
         >
           <ExternalLink className="w-4 h-4" />
         </a>

@@ -38,7 +38,7 @@ const CodeforcesStats = () => {
 
         if (statusResult && statusResult.status === 'OK' && statusResult.result) {
           const uniqueSolved = new Set<string>();
-          statusResult.result.forEach((sub: any) => {
+          statusResult.result.forEach((sub: { verdict: string; problem?: { contestId: number; index: string } }) => {
             if (sub.verdict === 'OK' && sub.problem) {
               const problemId = `${sub.problem.contestId}-${sub.problem.index}`;
               uniqueSolved.add(problemId);
@@ -107,6 +107,7 @@ const CodeforcesStats = () => {
           target="_blank" 
           rel="noopener noreferrer"
           className="p-2 border-2 border-black hover:bg-black hover:text-white transition-colors"
+          aria-label="View Codeforces Profile"
         >
           <ExternalLink className="w-4 h-4" />
         </a>

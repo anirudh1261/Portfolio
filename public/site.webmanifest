@@ -1,0 +1,17 @@
+{
+  "name": "Ganji Anirudh | Full Stack Developer",
+  "short_name": "Anirudh",
+  "description": "Portfolio of Ganji Anirudh - Full Stack Developer & AI/ML Enthusiast specializing in Python, React, and Machine Learning.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#f5f5f5",
+  "background_color": "#f5f5f5",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait"
+}

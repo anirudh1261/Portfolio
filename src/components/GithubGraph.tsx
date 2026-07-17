@@ -21,13 +21,13 @@ const GithubGraph = () => {
         const data = await response.json();
         if (data && data.contributions && data.total) {
           // Calculate total contributions
-          const totalContributions = Object.values(data.total).reduce(
-            (a: any, b: any) => a + b,
+          const totalContributions = (Object.values(data.total) as number[]).reduce(
+            (a: number, b: number) => a + b,
             0
-          ) as number;
+          );
 
           // Sort contributions ascending
-          const sorted = data.contributions.sort((a: any, b: any) =>
+          const sorted = data.contributions.sort((a: { date: string; count: number }, b: { date: string; count: number }) =>
             a.date.localeCompare(b.date)
           );
 
@@ -45,7 +45,7 @@ const GithubGraph = () => {
 
           // Calculate current streak
           const dateMap: { [key: string]: number } = {};
-          sorted.forEach((d: any) => {
+          sorted.forEach((d: { date: string; count: number }) => {
             dateMap[d.date] = d.count;
           });
 
@@ -57,7 +57,7 @@ const GithubGraph = () => {
           };
 
           let currentStreak = 0;
-          let checkDate = new Date();
+          const checkDate = new Date();
           let checkStr = toLocalDateStr(checkDate);
 
           // If checkDate has 0 contributions, check yesterday
@@ -108,6 +108,7 @@ const GithubGraph = () => {
           disabled={loading}
           className="p-1 border border-black hover:bg-black hover:text-white transition-colors"
           title="Refresh Live Stats"
+          aria-label="Refresh Live Stats"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
         </button>

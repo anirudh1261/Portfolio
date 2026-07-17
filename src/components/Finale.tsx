@@ -36,7 +36,7 @@ const Finale = () => {
   ];
 
   return (
-    <section className="relative w-full bg-white border-t-8 border-black pt-20 overflow-hidden">
+    <footer className="relative w-full bg-white border-t-8 border-black pt-20 overflow-hidden">
       {/* ... marquee ... */}
       <div className="absolute top-0 left-0 w-full py-4 bg-black overflow-hidden flex whitespace-nowrap">
         <div className="animate-marquee flex items-center shrink-0">
@@ -58,9 +58,9 @@ const Finale = () => {
       <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col items-center">
         {/* ... content ... */}
         <div className="relative mb-20 text-center">
-          <h2 className="text-[12vw] md:text-[8vw] font-black uppercase leading-none tracking-tighter text-black/5 absolute -top-1/2 left-1/2 -translate-x-1/2 select-none pointer-events-none">
+          <p aria-hidden="true" className="text-[12vw] md:text-[8vw] font-black uppercase leading-none tracking-tighter text-black/5 absolute -top-1/2 left-1/2 -translate-x-1/2 select-none pointer-events-none">
             THANK YOU
-          </h2>
+          </p>
           <p className="text-xl md:text-3xl font-black uppercase tracking-tight italic z-10 relative">
             Let's build something{' '}
             <span className="text-white bg-black px-4 py-1 not-italic">
@@ -116,7 +116,7 @@ const Finale = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

@@ -51,6 +51,8 @@ const Navbar = () => {
             }}
             onTouchStart={playClick}
             className="nav-link active:scale-95 transition-transform"
+            aria-expanded={open}
+            aria-label="Toggle navigation menu"
           >
             {open ? 'Close' : 'Menu'}
           </button>

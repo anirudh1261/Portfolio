@@ -125,7 +125,7 @@ If you have any questions or want to collaborate, feel free to reach out!
 - **LinkedIn**: [@ganji-anirudh](https://www.linkedin.com/in/ganji-anirudh-8897133b0/)
 - **Instagram**: [@anddyyyy_08](https://www.instagram.com/anddyyyy_08/)
 - **Email**: [anirudh.ganji15@gmail.com](mailto:anirudh.ganji15@gmail.com)
-- **WhatsApp**: [+91 9550533315](https://wa.me/919550533315)
+- **WhatsApp**: [+91 8374763104](https://wa.me/918374763104)
 
 ---
 <div align="center">

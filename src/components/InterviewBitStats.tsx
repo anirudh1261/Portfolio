@@ -3,11 +3,11 @@ import { Trophy, ExternalLink, Coins, Globe, Target } from 'lucide-react';
 const InterviewBitStats = () => {
   const displayData = {
     username: 'anirudh_968',
-    globalRank: 372432,
+    globalRank: 342087,
     universityRank: 1,
-    score: 633,
+    score: 733,
     coins: 50,
-    solvedCount: 6,
+    solvedCount: 8,
     totalCount: 954,
     streak: 0,
     language: 'Python',
@@ -115,7 +115,7 @@ const InterviewBitStats = () => {
       </div>
 
       <div className="mt-4 text-[9px] font-mono text-center opacity-30 italic">
-        * Static stats based on last sync profile
+        * Manually synced — InterviewBit has no public API
       </div>
     </div>
   );

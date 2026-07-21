@@ -3,6 +3,19 @@ import { Briefcase, ExternalLink, Building2, CalendarDays, FileText } from 'luci
 
 const internships = [
   {
+    role: 'Full Stack Developer Intern',
+    company: 'InternCourse',
+    duration: 'May 2026 – Jul 2026',
+    description:
+      'Successfully completed a 2-month intensive internship program specializing in Full Stack Development, designing responsive user interfaces, and implementing robust server-side functionalities.',
+    certificates: [
+      {
+        label: 'Internship Certificate',
+        link: '/certificates/Internship_ceritificates/InternCourse_Internship_Certificate.pdf',
+      },
+    ],
+  },
+  {
     role: 'Intern',
     company: 'Internship Organization',
     duration: '2025',

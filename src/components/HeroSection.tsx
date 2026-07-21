@@ -82,9 +82,9 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="text-center relative z-10">
-        {/* Tag line */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-foreground/30 bg-background/80 backdrop-blur-md shadow-sm">
+      <div className="text-center relative z-10 max-w-3xl mx-auto py-12">
+        {/* Tag line / Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-foreground/30 bg-background/80 backdrop-blur-md shadow-sm">
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
           <span className="font-mono text-xs text-foreground/90 tracking-[0.15em] uppercase font-medium">
             Open to Internships
@@ -94,12 +94,17 @@ const HeroSection = () => {
         {/* Name */}
         <h1
           className="heading-brutal leading-[0.85]"
-          style={{ fontSize: 'clamp(48px, 10vw, 130px)' }}
+          style={{ fontSize: 'clamp(44px, 9vw, 120px)' }}
         >
           Ganji
           <br />
           <span className="text-foreground/20">Anirudh.</span>
         </h1>
+
+        {/* Education Tag */}
+        <p className="mt-4 font-mono text-xs md:text-sm text-foreground/80 tracking-wider font-semibold uppercase">
+          B.Tech Computer Science Student @ SR University
+        </p>
 
         {/* Semantic subtitle — visible to search engines, visually hidden */}
         <p
@@ -111,7 +116,7 @@ const HeroSection = () => {
 
         {/* Typewriter role */}
         <div
-          className="mt-6 h-8 flex items-center justify-center"
+          className="mt-4 h-8 flex items-center justify-center"
           aria-label={`Ganji Anirudh is a ${roles[roleIndex]}`}
           role="text"
         >
@@ -134,8 +139,13 @@ const HeroSection = () => {
           </span>
         </div>
 
+        {/* Short Professional Introduction */}
+        <p className="mt-6 max-w-xl mx-auto text-sm md:text-base text-foreground/80 leading-relaxed font-normal px-2">
+          Full Stack Developer &amp; AI/ML Engineer skilled in building scalable web applications with <strong>React</strong>, <strong>Node.js</strong>, and <strong>Python</strong>, as well as AI solutions using <strong>FastAPI</strong>, <strong>LangChain</strong>, and Machine Learning.
+        </p>
+
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-2 justify-center mt-8 max-w-md mx-auto" aria-label="Core technologies used by Ganji Anirudh">
+        <div className="flex flex-wrap gap-2 justify-center mt-6 max-w-md mx-auto" aria-label="Core technologies used by Ganji Anirudh">
           {[
             'React',
             'Node.js',
@@ -156,8 +166,26 @@ const HeroSection = () => {
           ))}
         </div>
 
+        {/* Open to Opportunities Section */}
+        <div className="mt-8 max-w-md mx-auto border-2 border-black bg-white p-5 text-left shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
+          <p className="font-mono text-xs uppercase tracking-widest font-bold text-black mb-3 flex items-center gap-1.5">
+            <span>🚀</span> Currently seeking:
+          </p>
+          <ul className="space-y-1.5 font-mono text-xs text-foreground/90 font-medium">
+            <li className="flex items-center gap-2">
+              <span className="text-black font-bold">•</span> Software Engineering Internships
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-black font-bold">•</span> Full Stack Development Internships
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-black font-bold">•</span> AI/ML Internship Opportunities
+            </li>
+          </ul>
+        </div>
+
         {/* Social links */}
-        <nav aria-label="Ganji Anirudh's social profiles" className="flex gap-4 justify-center mt-10">
+        <nav aria-label="Ganji Anirudh's social profiles" className="flex gap-4 justify-center mt-8">
           {[
             {
               Icon: Github,
@@ -195,7 +223,7 @@ const HeroSection = () => {
         </nav>
 
         {/* Resume button */}
-        <div className="mt-10">
+        <div className="mt-8">
           <a
             href="/Ganji_Anirudh_Resume.pdf"
             download="Ganji_Anirudh_Resume.pdf"

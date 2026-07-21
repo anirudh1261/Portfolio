@@ -16,8 +16,8 @@ const internships = [
     ],
   },
   {
-    role: 'Intern',
-    company: 'Internship Organization',
+    role: 'Full Stack Developer Intern',
+    company: '1Stop',
     duration: '2025',
     description:
       'Completed a hands-on internship gaining practical industry experience in software development and project execution.',

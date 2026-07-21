@@ -10,29 +10,33 @@ const Finale = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/anirudh1261', label: 'GitHub' },
+    {
+      icon: Github,
+      href: 'https://github.com/anirudh1261',
+      label: "Ganji Anirudh's GitHub",
+    },
     {
       icon: Linkedin,
       href: 'https://www.linkedin.com/in/ganji-anirudh-8897133b0',
-      label: 'LinkedIn',
+      label: "Ganji Anirudh's LinkedIn",
     },
     {
       icon: Mail,
       href: 'https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com',
-      label: 'Email',
+      label: 'Email Ganji Anirudh',
     },
     {
       icon: InstagramIcon,
       href: 'https://instagram.com/anddyyyy_08',
-      label: 'Instagram',
+      label: "Ganji Anirudh's Instagram",
     },
   ];
 
   const marqueeTags = [
     'Ganji Anirudh 🚀',
-    'Full Stack Dev | Python | React | AI/ML',
-    'Building clean UI & smart solutions 🔖',
-    'Open to Internships & Collaborations',
+    'Full Stack Developer | AI/ML Engineer',
+    'React · Node.js · Python · LangChain 🔖',
+    'SR University, Warangal · Open to Internships',
   ];
 
   return (

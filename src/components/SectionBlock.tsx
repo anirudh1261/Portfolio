@@ -9,6 +9,7 @@ interface SectionBlockProps {
 const SectionBlock = ({ id, title, children }: SectionBlockProps) => {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const headingId = `${id}-heading`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,14 +29,16 @@ const SectionBlock = ({ id, title, children }: SectionBlockProps) => {
     <section
       id={id}
       ref={ref}
+      aria-labelledby={headingId}
       className={`relative z-10 max-w-4xl mx-auto px-6 py-16 md:py-32 transition-all duration-700 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <h2 className="section-title mb-12">{title}.</h2>
+      <h2 id={headingId} className="section-title mb-12">{title}.</h2>
       {children}
     </section>
   );
 };
 
 export default SectionBlock;
+

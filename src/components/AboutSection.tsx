@@ -1,32 +1,62 @@
 import SectionBlock from './SectionBlock';
 import AnimatedAvatar from './AnimatedAvatar';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => (
   <SectionBlock id="about" title="About me">
-    <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
+    <article
+      aria-label="About Ganji Anirudh"
+      className="flex flex-col md:flex-row items-center md:items-start gap-12"
+    >
       <AnimatedAvatar />
       <div className="flex-1">
         <p className="body-text max-w-2xl">
-          I'm a passionate 3rd-year Computer Science student at SR University,
-          focused on becoming a proficient full-stack developer. I believe in the
-          power of clean code and well-designed interfaces to communicate ideas
-          effectively.
+          I'm <strong>Ganji Anirudh</strong>, a passionate B.Tech Computer
+          Science student (Class of 2028) at{' '}
+          <strong>SR University, Warangal, Telangana</strong>. I build
+          full-stack web applications and AI-powered systems — driven by a
+          belief that clean code and thoughtful design can genuinely improve
+          people's lives.
         </p>
         <p className="body-text max-w-2xl mt-6">
-          I enjoy designing responsive user interfaces and developing robust
-          backend systems. I actively participate in hackathons and work on
-          real-time projects to gain practical experience beyond academics.
+          My core stack spans <strong>React</strong> and{' '}
+          <strong>TypeScript</strong> on the frontend, and{' '}
+          <strong>Node.js</strong>, <strong>Express</strong>, and{' '}
+          <strong>FastAPI</strong> on the backend — backed by{' '}
+          <strong>MongoDB</strong> and SQL databases. On the AI side, I work
+          with <strong>Python</strong>, <strong>LangChain</strong>,{' '}
+          <strong>TensorFlow</strong>, and <strong>scikit-learn</strong> to
+          build Retrieval-Augmented Generation (RAG) systems, computer-vision
+          pipelines, and machine-learning models.
         </p>
         <p className="body-text max-w-2xl mt-6">
-          I'm always open to collaborations, internships, and opportunities
-          where I can contribute, learn, and grow in the tech industry. My
-          technical journey spans across web development, machine learning, and
-          AI — and I'm constantly exploring new technologies.
+          Outside the classroom, I stay sharp through{' '}
+          <strong>hackathons</strong> — including INNO-VA-THON 2.0, HackOS,
+          VIVITSU '26, and EFOS — where I've shipped real prototypes under
+          pressure. I also contribute to{' '}
+          <strong>open-source projects</strong> on GitHub and continuously
+          expand my knowledge through certifications from AWS, Google, IBM,
+          Microsoft, and Cisco.
+        </p>
+        <p className="body-text max-w-2xl mt-6">
+          I'm currently open to <strong>software engineering internships</strong>{' '}
+          and <strong>collaborations</strong> where I can apply my skills in
+          full-stack development and AI to solve meaningful, real-world
+          problems. If you're building something exciting, I'd love to hear
+          about it. You can also read my{' '}
+          <Link
+            to="/about"
+            className="font-bold underline underline-offset-4 decoration-2 hover:text-black transition-colors"
+            aria-label="Read Ganji Anirudh's detailed biography page"
+          >
+            detailed biography
+          </Link>{' '}
+          to learn more about my academic background, career goals, and project details.
         </p>
       </div>
-    </div>
-
+    </article>
   </SectionBlock>
 );
 
 export default AboutSection;
+

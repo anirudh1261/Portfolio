@@ -10,9 +10,10 @@ import {
 
 const roles = [
   'Full Stack Developer',
-  'AI/ML Enthusiast',
+  'AI/ML Engineer',
+  'React Developer',
   'Python Developer',
-  'Web Developer',
+  'Node.js Developer',
 ];
 
 const HeroSection = () => {
@@ -100,8 +101,20 @@ const HeroSection = () => {
           <span className="text-foreground/20">Anirudh.</span>
         </h1>
 
+        {/* Semantic subtitle — visible to search engines, visually hidden */}
+        <p
+          className="sr-only"
+          aria-hidden="false"
+        >
+          Ganji Anirudh — Full Stack Developer, AI/ML Engineer, and B.Tech Computer Science student at SR University, Warangal, Telangana. Specializing in React, Node.js, Python, FastAPI, and Machine Learning.
+        </p>
+
         {/* Typewriter role */}
-        <div className="mt-6 h-8 flex items-center justify-center">
+        <div
+          className="mt-6 h-8 flex items-center justify-center"
+          aria-label={`Ganji Anirudh is a ${roles[roleIndex]}`}
+          role="text"
+        >
           <span className="font-mono text-sm md:text-base tracking-[0.2em] text-foreground/50">
             {'< '}
           </span>
@@ -112,6 +125,7 @@ const HeroSection = () => {
             className={`font-mono text-sm md:text-base text-foreground/70 ${
               cursorVisible ? 'opacity-100' : 'opacity-0'
             }`}
+            aria-hidden="true"
           >
             |
           </span>
@@ -121,14 +135,16 @@ const HeroSection = () => {
         </div>
 
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-2 justify-center mt-8 max-w-md mx-auto">
+        <div className="flex flex-wrap gap-2 justify-center mt-8 max-w-md mx-auto" aria-label="Core technologies used by Ganji Anirudh">
           {[
-            'Python',
             'React',
-            'JavaScript',
             'Node.js',
-            'TailwindCSS',
+            'Python',
+            'TypeScript',
+            'FastAPI',
+            'MongoDB',
             'Machine Learning',
+            'LangChain',
           ].map((tech) => (
             <span
               key={tech}
@@ -141,27 +157,27 @@ const HeroSection = () => {
         </div>
 
         {/* Social links */}
-        <div className="flex gap-4 justify-center mt-10">
+        <nav aria-label="Ganji Anirudh's social profiles" className="flex gap-4 justify-center mt-10">
           {[
             {
               Icon: Github,
               href: 'https://github.com/anirudh1261',
-              label: 'GitHub',
+              label: "View Ganji Anirudh's GitHub profile",
             },
             {
               Icon: Linkedin,
               href: 'https://www.linkedin.com/in/ganji-anirudh-8897133b0',
-              label: 'LinkedIn',
+              label: "Connect with Ganji Anirudh on LinkedIn",
             },
             {
               Icon: InstagramIcon,
               href: 'https://instagram.com/anddyyyy_08',
-              label: 'Instagram',
+              label: "Follow Ganji Anirudh on Instagram",
             },
             {
               Icon: Mail,
               href: 'https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com',
-              label: 'Email',
+              label: 'Send Ganji Anirudh an email',
             },
           ].map(({ Icon, href, label }, i) => (
             <a
@@ -176,7 +192,7 @@ const HeroSection = () => {
               <Icon className="w-5 h-5" />
             </a>
           ))}
-        </div>
+        </nav>
 
         {/* Resume button */}
         <div className="mt-10">

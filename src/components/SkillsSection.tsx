@@ -23,6 +23,7 @@ const skillCategories = [
     skills: [
       'React',
       'Vue.js',
+      'TypeScript',
       'JavaScript',
       'HTML5',
       'CSS3',
@@ -48,6 +49,7 @@ const skillCategories = [
     color: 'bg-green-50',
     skills: [
       'Python',
+      'TypeScript',
       'JavaScript',
       'C',
       'Ruby',
@@ -61,11 +63,23 @@ const skillCategories = [
     skills: [
       'TensorFlow',
       'scikit-learn',
+      'LangChain',
       'Pandas',
       'NumPy',
       'Matplotlib',
-      'Plotly',
-      'SciPy',
+      'YOLOv8',
+      'OpenCV',
+    ],
+  },
+  {
+    title: 'Cloud & DevOps',
+    icon: <Layers className="w-5 h-5" />,
+    color: 'bg-yellow-50',
+    skills: [
+      'AWS',
+      'Docker',
+      'Vercel',
+      'GitHub Actions',
     ],
   },
   {
@@ -75,12 +89,10 @@ const skillCategories = [
     skills: [
       'Git',
       'GitHub',
-      'LeetCode',
-      'Figma',
       'Postman',
+      'Figma',
       'Power BI',
       'Jupyter Notebook',
-      'Vercel',
     ],
   },
 ];
@@ -88,12 +100,13 @@ const skillCategories = [
 const SkillsSection = () => {
   return (
     <SectionBlock id="skills" title="Technical Arsenal">
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-16" aria-label="Technical skills of Ganji Anirudh">
         {/* Skill Modules */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, idx) => (
-            <div
+            <article
               key={category.title}
+              aria-label={`${category.title} skills`}
               className="group border-2 border-black p-6 bg-white hover:-translate-y-1 transition-all duration-300 relative"
               style={{
                 animationDelay: `${idx * 100}ms`,
@@ -118,7 +131,7 @@ const SkillsSection = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
 
           {/* Final "Load" Card */}

@@ -9,6 +9,8 @@ import {
   Linkedin,
   InstagramIcon,
   Send,
+  Code2,
+  Trophy,
 } from 'lucide-react';
 
 const ContactSection = () => {
@@ -39,7 +41,7 @@ const ContactSection = () => {
     <SectionBlock id="contact" title="Get in touch">
       <div className="grid md:grid-cols-2 gap-8 md:gap-20">
         {/* Left Column: Contact Info */}
-        <div className="space-y-8 md:space-y-10">
+        <address className="space-y-8 md:space-y-10 not-italic">
           <p className="text-foreground/80 leading-relaxed font-light text-lg">
             I'm always interested in hearing about new projects, internship
             opportunities, and collaborations. Whether you have a question or
@@ -55,14 +57,21 @@ const ContactSection = () => {
                 <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">
                   Email
                 </p>
-                <p className="font-mono text-sm break-all">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=anirudh.ganji15@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-sm break-all hover:underline"
+                  aria-label="Send an email to Ganji Anirudh"
+                >
                   anirudh.ganji15@gmail.com
-                </p>
+                </a>
               </div>
               <button
                 onClick={copyEmail}
                 className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
-                title="Copy email"
+                title="Copy email address"
+                aria-label="Copy Ganji Anirudh's email address"
               >
                 {copied ? (
                   <Check className="w-4 h-4 text-green-600" />
@@ -73,22 +82,70 @@ const ContactSection = () => {
             </div>
           </div>
 
+          {/* Competitive Programming profiles */}
+          <div>
+            <p className="text-xs uppercase tracking-widest text-foreground/50 mb-4">
+              Competitive Programming
+            </p>
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://leetcode.com/u/GANJI_ANIRUDH/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center gap-3 text-sm font-medium hover:underline underline-offset-4"
+                aria-label="View Ganji Anirudh's LeetCode profile"
+              >
+                <Trophy className="w-4 h-4 shrink-0" />
+                LeetCode — GANJI_ANIRUDH
+              </a>
+              <a
+                href="https://codeforces.com/profile/anirudh.ganji15"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center gap-3 text-sm font-medium hover:underline underline-offset-4"
+                aria-label="View Ganji Anirudh's Codeforces profile"
+              >
+                <Code2 className="w-4 h-4 shrink-0" />
+                Codeforces — anirudh.ganji15
+              </a>
+              <a
+                href="https://www.codechef.com/users/anirudh_0334"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center gap-3 text-sm font-medium hover:underline underline-offset-4"
+                aria-label="View Ganji Anirudh's CodeChef profile"
+              >
+                <Code2 className="w-4 h-4 shrink-0" />
+                CodeChef — anirudh_0334
+              </a>
+            </div>
+          </div>
+
           <div>
             <p className="text-xs uppercase tracking-widest text-foreground/50 mb-4">
               Connect
             </p>
             <div className="flex gap-4">
               {[
-                { Icon: Github, href: 'https://github.com/anirudh1261' },
+                {
+                  Icon: Github,
+                  href: 'https://github.com/anirudh1261',
+                  label: "View Ganji Anirudh's GitHub profile",
+                },
                 {
                   Icon: Linkedin,
                   href: 'https://www.linkedin.com/in/ganji-anirudh-8897133b0',
+                  label: "Connect with Ganji Anirudh on LinkedIn",
                 },
                 {
                   Icon: InstagramIcon,
                   href: 'https://instagram.com/anddyyyy_08',
+                  label: "Follow Ganji Anirudh on Instagram",
                 },
-              ].map(({ Icon, href }, i) => (
+              ].map(({ Icon, href, label }, i) => (
                 <a
                   key={i}
                   href={href}
@@ -96,6 +153,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   onClick={playClick}
                   onTouchStart={playClick}
+                  aria-label={label}
                   className="p-3 border border-foreground/20 hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95 touch-manipulation"
                 >
                   <Icon className="w-5 h-5" />
@@ -103,7 +161,7 @@ const ContactSection = () => {
               ))}
             </div>
           </div>
-        </div>
+        </address>
 
         {/* Right Column: Form */}
         <form onSubmit={handleSubmit} className="space-y-6">

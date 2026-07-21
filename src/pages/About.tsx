@@ -8,6 +8,35 @@ const aboutSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://ganji-anirudh.vercel.app/#person",
+      "name": "Ganji Anirudh",
+      "givenName": "Anirudh",
+      "familyName": "Ganji",
+      "url": "https://ganji-anirudh.vercel.app/",
+      "jobTitle": ["Full Stack Developer", "AI/ML Engineer", "Software Engineer"],
+      "description": "Ganji Anirudh is a Full Stack Developer and AI/ML Engineer — a B.Tech Computer Science student at SR University, Warangal, Telangana.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://ganji-anirudh.vercel.app/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "sameAs": [
+        "https://github.com/anirudh1261",
+        "https://www.linkedin.com/in/ganji-anirudh-8897133b0",
+        "https://leetcode.com/u/GANJI_ANIRUDH/",
+        "https://codeforces.com/profile/anirudh.ganji15",
+        "https://www.codechef.com/users/anirudh_0334",
+        "https://instagram.com/anddyyyy_08"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "SR University",
+        "url": "https://sru.edu.in/"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://ganji-anirudh.vercel.app/about#webpage",
       "url": "https://ganji-anirudh.vercel.app/about",
@@ -20,6 +49,7 @@ const aboutSchema = {
         "@id": "https://ganji-anirudh.vercel.app/#person"
       },
       "inLanguage": "en-IN",
+      "datePublished": "2026-07-01",
       "dateModified": "2026-07-21",
       "breadcrumb": {
         "@type": "BreadcrumbList",

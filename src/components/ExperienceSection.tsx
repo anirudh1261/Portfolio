@@ -431,8 +431,9 @@ const ExperienceSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayed.map((cert, idx) => (
-            <div
+            <article
               key={`${cert.title}-${idx}`}
+              aria-label={cert.title}
               className="group flex items-start gap-4 p-5 border-2 border-black/10 bg-white hover:border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="p-2 border-2 border-black bg-black text-white group-hover:bg-white group-hover:text-black transition-colors shrink-0 mt-0.5">
@@ -447,7 +448,7 @@ const ExperienceSection = () => {
                     {cert.issuer}
                   </span>
                   <span className="text-foreground/30 text-xs hidden sm:inline">
-                    •
+                    &bull;
                   </span>
                   <span className="font-mono text-[11px] text-foreground/50">
                     {cert.date}
@@ -475,6 +476,7 @@ const ExperienceSection = () => {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View certificate: ${cert.title} from ${cert.issuer}`}
                     className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold uppercase tracking-wider text-black hover:underline hover:gap-2 transition-all duration-200"
                   >
                     View Certificate
@@ -482,7 +484,7 @@ const ExperienceSection = () => {
                   </a>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

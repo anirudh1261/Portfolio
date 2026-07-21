@@ -13,7 +13,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
+    <main id="main-content" className="flex min-h-screen items-center justify-center bg-muted">
       <Helmet>
         <title>Page Not Found | Ganji Anirudh</title>
         <meta name="description" content="The page you are looking for does not exist on Ganji Anirudh's portfolio site." />
@@ -28,7 +28,7 @@ const NotFound = () => {
           Return to Home
         </a>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -22,8 +22,9 @@ const EducationSection = () => (
   <SectionBlock id="education" title="Education">
     <div className="space-y-10">
       {education.map((item) => (
-        <div
+        <article
           key={item.degree}
+          aria-label={item.degree}
           className="border-l-2 border-black/10 pl-6 py-2 hover:border-black transition-colors duration-300"
         >
           <h3 className="text-lg md:text-xl font-bold text-foreground">
@@ -36,7 +37,7 @@ const EducationSection = () => (
               {item.year}
             </span>
           </div>
-        </div>
+        </article>
       ))}
     </div>
   </SectionBlock>

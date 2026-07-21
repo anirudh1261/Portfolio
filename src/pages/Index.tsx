@@ -148,10 +148,7 @@ const Index = () => {
         "inLanguage": "en-IN",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://ganji-anirudh.vercel.app/?q={search_term_string}"
-          },
+          "target": "https://ganji-anirudh.vercel.app/?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
@@ -161,6 +158,8 @@ const Index = () => {
         "url": "https://ganji-anirudh.vercel.app/",
         "name": "Ganji Anirudh Profile Page",
         "description": "Official profile page of Ganji Anirudh, showcasing academic credentials, skills, competitive programming stats, and projects.",
+        "datePublished": "2024-08-01",
+        "dateModified": "2026-07-21",
         "mainEntity": {
           "@id": "https://ganji-anirudh.vercel.app/#person"
         },
@@ -184,6 +183,7 @@ const Index = () => {
           "@id": "https://ganji-anirudh.vercel.app/#breadcrumb"
         },
         "inLanguage": "en-IN",
+        "datePublished": "2024-08-01",
         "dateModified": "2026-07-21"
       },
       {

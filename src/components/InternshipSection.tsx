@@ -124,6 +124,7 @@ const InternshipSection = () => {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`View ${cert.label} from ${intern.company}`}
                       className="group/cert inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-black/20 bg-black/3 hover:border-black hover:bg-black hover:text-white text-[11px] font-bold uppercase tracking-wider text-black transition-all duration-200 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5"
                     >
                       <ExternalLink className="w-3 h-3 group-hover/cert:rotate-12 transition-transform duration-200" />

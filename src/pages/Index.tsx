@@ -137,7 +137,7 @@ const Index = () => {
         ]
       },
       {
-        "@type": ["WebSite", "ProfilePage"],
+        "@type": "WebSite",
         "@id": "https://ganji-anirudh.vercel.app/#website",
         "url": "https://ganji-anirudh.vercel.app/",
         "name": "Ganji Anirudh — Full Stack Developer & AI/ML Engineer",
@@ -153,6 +153,19 @@ const Index = () => {
             "urlTemplate": "https://ganji-anirudh.vercel.app/?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://ganji-anirudh.vercel.app/#profile",
+        "url": "https://ganji-anirudh.vercel.app/",
+        "name": "Ganji Anirudh Profile Page",
+        "description": "Official profile page of Ganji Anirudh, showcasing academic credentials, skills, competitive programming stats, and projects.",
+        "mainEntity": {
+          "@id": "https://ganji-anirudh.vercel.app/#person"
+        },
+        "isPartOf": {
+          "@id": "https://ganji-anirudh.vercel.app/#website"
         }
       },
       {

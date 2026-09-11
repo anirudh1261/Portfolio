@@ -15,7 +15,7 @@ const FALLBACK_DATA: CodeChefData = {
   name: 'anirudh_0334',
   currentRating: null,
   highestRating: null,
-  numberOfProblemsSolved: 120,
+  numberOfProblemsSolved: 138,
   globalRank: null,
   countryRank: null,
   stars: 'unrated',
@@ -47,7 +47,7 @@ const CodeChefStats = () => {
               name: result.username || 'anirudh_0334',
               currentRating: result.currentRating ?? (result.rating ? parseInt(result.rating, 10) : null),
               highestRating: result.highestRating ?? null,
-              numberOfProblemsSolved: result.numberOfProblemsSolved ?? result.solvedProblems ?? 120,
+              numberOfProblemsSolved: result.numberOfProblemsSolved ?? result.solvedProblems ?? 138,
               globalRank: result.globalRank ?? null,
               countryRank: result.countryRank ?? null,
               stars: result.stars ? (typeof result.stars === 'number' ? `${result.stars}★` : String(result.stars)) : 'unrated',
@@ -188,7 +188,7 @@ const CodeChefStats = () => {
 
       {!loading && !data && (
         <div className="mt-4 text-[9px] font-mono text-center opacity-40 italic">
-          * Showing cached baseline stats
+          * Showing baseline stats ({displayData.numberOfProblemsSolved} problems solved)
         </div>
       )}
     </div>

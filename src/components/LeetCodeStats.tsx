@@ -14,15 +14,15 @@ interface LeetCodeData {
 }
 
 const FALLBACK_STATS: LeetCodeData = {
-  totalSolved: 201,
-  totalQuestions: 4033,
-  easySolved: 117,
-  totalEasy: 961,
-  mediumSolved: 65,
-  totalMedium: 2105,
-  hardSolved: 19,
-  totalHard: 967,
-  ranking: 842766,
+  totalSolved: 218,
+  totalQuestions: 4047,
+  easySolved: 122,
+  totalEasy: 963,
+  mediumSolved: 73,
+  totalMedium: 2111,
+  hardSolved: 23,
+  totalHard: 973,
+  ranking: 771667,
 };
 
 const POLL_INTERVAL_MS = 5 * 60 * 1000; // refresh every 5 minutes
@@ -36,25 +36,25 @@ const LeetCodeStats = () => {
     const timeoutId = setTimeout(() => controller.abort(), 6000);
     let fetchedData: LeetCodeData | null = null;
 
-    // Endpoint 1: alfa-leetcode-api userProfile (has CORS headers)
+    // Endpoint 1: leetcode-api-faisalshohag (Fast & Vercel hosted)
     try {
       const response = await fetch(
-        'https://alfa-leetcode-api.onrender.com/userProfile/GANJI_ANIRUDH',
+        'https://leetcode-api-faisalshohag.vercel.app/GANJI_ANIRUDH',
         { cache: 'no-store', signal: controller.signal }
       );
       if (response.ok) {
         const result = await response.json();
-        if (result && (result.totalSolved !== undefined || result.solvedProblem !== undefined)) {
+        if (result && result.totalSolved !== undefined) {
           fetchedData = {
-            totalSolved: result.totalSolved ?? result.solvedProblem ?? 201,
-            totalQuestions: result.totalQuestions ?? 4033,
-            easySolved: result.easySolved ?? 117,
-            totalEasy: result.totalEasy ?? 961,
-            mediumSolved: result.mediumSolved ?? 65,
-            totalMedium: result.totalMedium ?? 2105,
-            hardSolved: result.hardSolved ?? 19,
-            totalHard: result.totalHard ?? 967,
-            ranking: result.ranking ?? 842766,
+            totalSolved: result.totalSolved,
+            totalQuestions: result.totalQuestions ?? 4047,
+            easySolved: result.easySolved ?? 122,
+            totalEasy: result.totalEasy ?? 963,
+            mediumSolved: result.mediumSolved ?? 73,
+            totalMedium: result.totalMedium ?? 2111,
+            hardSolved: result.hardSolved ?? 23,
+            totalHard: result.totalHard ?? 973,
+            ranking: result.ranking ?? 771667,
           };
         }
       }
@@ -62,26 +62,26 @@ const LeetCodeStats = () => {
       console.warn('Primary LeetCode API failed, trying fallback...', error);
     }
 
-    // Endpoint 2: alfa-leetcode-api /solved route
+    // Endpoint 2: alfa-leetcode-api userProfile
     if (!fetchedData) {
       try {
         const response = await fetch(
-          'https://alfa-leetcode-api.onrender.com/GANJI_ANIRUDH/solved',
+          'https://alfa-leetcode-api.onrender.com/userProfile/GANJI_ANIRUDH',
           { cache: 'no-store', signal: controller.signal }
         );
         if (response.ok) {
           const result = await response.json();
-          if (result && (result.solvedProblem !== undefined || result.totalSolved !== undefined)) {
+          if (result && (result.totalSolved !== undefined || result.solvedProblem !== undefined)) {
             fetchedData = {
-              totalSolved: result.solvedProblem ?? result.totalSolved ?? 201,
-              totalQuestions: 4033,
-              easySolved: result.easySolved ?? 117,
-              totalEasy: 961,
-              mediumSolved: result.mediumSolved ?? 65,
-              totalMedium: 2105,
-              hardSolved: result.hardSolved ?? 19,
-              totalHard: 967,
-              ranking: 842766,
+              totalSolved: result.totalSolved ?? result.solvedProblem ?? 218,
+              totalQuestions: result.totalQuestions ?? 4047,
+              easySolved: result.easySolved ?? 122,
+              totalEasy: result.totalEasy ?? 963,
+              mediumSolved: result.mediumSolved ?? 73,
+              totalMedium: result.totalMedium ?? 2111,
+              hardSolved: result.hardSolved ?? 23,
+              totalHard: result.totalHard ?? 973,
+              ranking: result.ranking ?? 771667,
             };
           }
         }
@@ -203,7 +203,7 @@ const LeetCodeStats = () => {
 
       {!loading && !data && (
         <div className="mt-4 text-[9px] font-mono text-center opacity-40 italic">
-          * Showing cached baseline stats (201 problems solved)
+          * Showing cached baseline stats
         </div>
       )}
     </div>

@@ -23,13 +23,13 @@ const FALLBACK_USER: CodeforcesUser = {
   titlePhoto: 'https://userpic.codeforces.org/no-title.jpg',
   avatar: 'https://userpic.codeforces.org/no-avatar.jpg',
   registrationTimeSeconds: 1783263497,
-  rating: 1204,
-  rank: 'specialist',
-  maxRating: 1204,
-  maxRank: 'specialist',
+  rating: undefined,
+  rank: 'Unrated',
+  maxRating: undefined,
+  maxRank: undefined,
 };
-const FALLBACK_SOLVED = 52;
-const FALLBACK_SUBMISSIONS = 60;
+const FALLBACK_SOLVED = 55;
+const FALLBACK_SUBMISSIONS = 70;
 
 const DIRECT_INFO_URL = 'https://codeforces.com/api/user.info?handles=anirudh.ganji15';
 const DIRECT_STATUS_URL = 'https://codeforces.com/api/user.status?handle=anirudh.ganji15&from=1&count=1000';
